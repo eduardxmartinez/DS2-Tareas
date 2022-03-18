@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 8</title>
+</head>
+<body>
+    <h1>Pasar valores de A-B y B-A</h1>
+    <h3>Código:</h3>
+    <div>
+        <p>public class DS2Tarea8 {<br />
+            &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; public static void main(String[] args) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; Scanner sc = new Scanner(System.in);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; double[][] A = new double[3][3];<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; double[][] B = new double[3][3];<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; double[][] C = new double[3][3];<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; 2; i++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;Ingrese 9 n&uacute;meros&quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 0; j &lt; 3; j++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int k = 0; k &lt; 3; k++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(&quot;Valor [&quot; + j +
+            &quot;][&quot; + k + &quot;]: &quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i == 0) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A[j][k] = sc.nextDouble();<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i == 1) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; B[j][k] = sc.nextDouble();<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;\n&quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; 4; i++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i%2 == 0) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;Matriz A&quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i%2 == 1) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;Matriz B&quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 0; j &lt; 3; j++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int k = 0; k &lt; 3; k++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i%2 == 0) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(A[j][k] +
+            &quot; &quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i%2 == 1) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(B[j][k] +
+            &quot; &quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;&quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;\n&quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i == 1) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;Intercambio A-B\n&quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 0; j &lt; 3; j++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int k = 0; k &lt; 3; k++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; C[j][k] = A[j][k];<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A[j][k] = B[j][k];<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; B[j][k] = C[j][k];<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; }</p>
+        
+        <p>&nbsp; &nbsp; }</p>
+        
+        <p>}<br />
+            &nbsp;</p>
+
+    </div>
+    <h3>Resultados:</h3>
+    <img src="./img1.png" alt="">
+    <img src="./img2.png" alt="">
+    <img src="./img3.png" alt="">
+</body>
+</html>

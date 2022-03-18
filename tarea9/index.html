@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Matriz diagonal</h1>
+    <h3>Código:</h3>
+    <div>
+        <p>public class DS2Tarea9 {</p>
+        
+        <p>&nbsp; &nbsp; public static void main(String[] args) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; Scanner sc = new Scanner(System.in);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; int n;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; int[][] A = new int[5][5];<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;Ingrese un n&uacute;mero entero&quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; n = sc.nextInt();<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; 5; i++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 0; j &lt; 5; j++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i == j) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A[i][j] = n;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i == (j - 1)) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A[i][j] = n + 1;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i == (j + 1)) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A[i][j] = n - 1;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(A[i][j] + &quot; &quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;&quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; 5; i++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 0; j &lt; 5; j++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;&quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; }</p>
+        
+        <p>}<br />
+            &nbsp;</p>
+
+    </div>
+    <h3>Resultados:</h3>
+    <img src="./img1.png" alt="">
+    <img src="./img2.png" alt="">
+    <img src="./img3.png" alt="">
+</body>
+</html>
