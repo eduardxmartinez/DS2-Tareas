@@ -4,9 +4,194 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Evaluacion 1</title>
 </head>
 <body>
-    
+    <h1>Gato 5x5 jugador v. pc</h1>
+    <h3>Código:</h3>
+    <div>
+        <p>package ds2.e1;</p>
+        
+        <p>import java.util.Scanner;</p>
+        
+        <p>public class Gato5x5Metodos {</p>
+        
+        <p>&nbsp; &nbsp; public static void main(String[] args) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String z[][] = new String[5][5]; // CASILLAS 5X5&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; inicializar(z); // INICIALIZAR LAS CASILLAS EN CERO<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; 25; i++) { // 25 TURNOS<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i % 2 == 0) { // TIRA JUGADOR 1 EN TURNO PAR<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; posiciones(z); // MOSTRAR POSICIONES DE LAS CASILLAS<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jugador1(z); // TIRA JUGADOR 1<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i % 2 == 1) { //TIRA PC EN TURNO IMPAR<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pc(z); // TIRA PC<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; despliega(z); // SE DESPLIEGA EL RESULTADO DEL TURNO<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (verifica(z) == true) { // VERIFICA SI HAY ALGUN GANADOR<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break; // TERMINA EL JUEGO SI HAY GANADOR<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i == 24) { // TURNO 25<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;Empate&quot;); // FINAL DE ULTIMO
+            TURNO JUEGO ES EMPATE<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; }</p>
+        
+        <p>&nbsp; &nbsp; }</p>
+        
+        <p>&nbsp; &nbsp; public static void posiciones(String w[][]) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; 5; i++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 0; j &lt; 5; j++) { // RECORRER ARREGLO 5X5<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(i); // IMPRIMIR NUMERO DE RENGLON<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(j); // IMPRIMIR NUMERO DE COLUMNA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(&quot; &quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot; &quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; }</p>
+        
+        <p>&nbsp; &nbsp; public static void inicializar(String w[][]) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; 5; i++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 0; j &lt; 5; j++) { // RECORRER ARREGLO 5X5<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; w[i][j] = &quot;#&quot;; // LLENAR ARREGLO CON
+            &quot;#&quot;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; }</p>
+        
+        <p>&nbsp; &nbsp; public static void despliega(String w[][]) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 0; j &lt; 5; j++) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int k = 0; k &lt; 5; k++) { // RECORRER ARREGLO 5X5<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(w[j][k]); // MOSTRAR CADA ELEMENTO DEL
+            ARREGLO<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(&quot; &quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;&quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;---------------&quot;);<br />
+            &nbsp; &nbsp; }</p>
+        
+        <p>&nbsp; &nbsp; public static boolean verifica(String gato[][]) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String n = null; // INICIALIZAR VARIABLE N COMO COMPARADOR<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 0; j &lt; 12; j++) { // 12 FORMAS DE GANAR<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; switch (j) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 0 -&gt;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n = gato[0][0] + gato[0][1] + gato[0][2] +
+            gato[0][3] + gato[0][4]; // PRIMER RENGLON<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 1 -&gt;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n = gato[1][0] + gato[1][1] + gato[1][2] +
+            gato[1][3] + gato[1][4]; // SEGUNDO RENGLON<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 2 -&gt;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n = gato[2][0] + gato[2][1] + gato[2][2] +
+            gato[2][3] + gato[2][4]; // TERCER RENGLON<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 3 -&gt;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n = gato[3][0] + gato[3][1] + gato[3][2] +
+            gato[3][3] + gato[3][4]; // CUARTO RENGLON<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 4 -&gt;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n = gato[4][0] + gato[4][1] + gato[4][2] +
+            gato[4][3] + gato[4][4]; // QUINTO RENGLON<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 5 -&gt;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n = gato[0][0] + gato[1][0] + gato[2][0] +
+            gato[3][0] + gato[4][0]; // PRIMER COLUMNA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 6 -&gt;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n = gato[0][1] + gato[1][1] + gato[2][1] +
+            gato[3][1] + gato[4][1]; // SEGUNDA COLUMNA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 7 -&gt;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n = gato[0][2] + gato[1][2] + gato[2][2] +
+            gato[3][2] + gato[4][2]; // TERCERA COLUMNA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 8 -&gt;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n = gato[0][3] + gato[1][3] + gato[2][3] +
+            gato[3][3] + gato[4][3]; // CUARTA COLUMNA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 9 -&gt;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n = gato[0][4] + gato[1][4] + gato[2][4] +
+            gato[3][4] + gato[4][4]; // QUINTA COLUMNA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 10 -&gt;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n = gato[0][0] + gato[1][1] + gato[2][2] +
+            gato[3][3] + gato[4][4]; // DIAGONAL<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 11 -&gt;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n = gato[4][0] + gato[3][1] + gato[2][2] +
+            gato[1][3] + gato[0][4]; // DIAGONAL<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; default -&gt; { // DEFAULT BREAK<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (&quot;XXXXX&quot;.equals(n)) { // SI N TIENE 5 X&#39;S<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;Ganaste&quot;); // IMPRIMIR
+            GANAR<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break; // SALIR DEL CICLO<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (&quot;OOOOO&quot;.equals(n)) { // SI N TIENE 5 O&#39;S<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;Perdiste&quot;); // IMPRIMIR
+            PERDISTE<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break; // SALIR DEL CICLO<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; if (&quot;XXXXX&quot;.equals(n) || &quot;OOOOO&quot;.equals(n)) { // SI SE TIENEN 5
+            X&#39;S O O&#39;S<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return true; // RETORNAR TRUE<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; return false; // RETORNAR FALSE<br />
+            &nbsp; &nbsp; }</p>
+        
+        <p>&nbsp; &nbsp; public static void jugador1(String gato[][]) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; Scanner sc = new Scanner(System.in); // INICIALIZAR SCANNER<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; int x, y; // DECLARAR X Y PARA POSICIONES<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; boolean entero = true, desocupado = true; // DECLARAR BOOLEANS PARA VERIFICAR LOS
+            NUMEROS INGRESADORS<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; do {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; do {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;\nJugador. Ingrese la
+            posici&oacute;n que desee&quot;); // IMPRIMIR QUE ES TURNO DEL JUGADOR<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(&quot;Posici&oacute;n X: &quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; x = sc.nextInt(); // LEER RENGLON<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(&quot;Posici&oacute;n Y: &quot;);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; y = sc.nextInt(); // LEER COLUMNA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (x &lt; 0 || y &lt; 0 || x &gt; 4 || y &gt; 4) { //
+            VERIFICAR SI ESTA FUERA DEL RANGO<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; entero = false; // RETORNAR FALSE<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;Posici&oacute;n
+            inv&aacute;lida&quot;); //MENSAJE DE ERROR<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else { // SI ESTA DENTRO DE RANGO<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; entero = true; // RETORNAR TRUE<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } while (entero == false); // REPETIR EL CICLO SI LOS NUMEROS ESTAN FUERA
+            DE RANGO<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; do {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!&quot;#&quot;.equals(gato[x][y])) { // VERIFICAR SI LA
+            POSICION YA ESTA OCUPADA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;Posici&oacute;n
+            inv&aacute;lida&quot;); // MENSAJE DE ERROR SI ESTA OCUPADA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else { // SI NO ESTA OCUPADA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; desocupado = true; // RETORNAR TRUE<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } while (desocupado == false); // REPETIR EL CICLO MIENTRAS LA POSICION
+            ESTE OCUPADA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; } while (desocupado == false || entero == false); // REPETIR EL CICLO MIENTRAS ESTA
+            OCUPADA O MIENTRAS LOS NUMEROS SEAN INVALIDOS<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; gato[x][y] = &quot;X&quot;; // ASIGNAR X A LA POSICION<br />
+            &nbsp; &nbsp; }</p>
+        
+        <p>&nbsp; &nbsp; public static void pc(String gato[][]) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; int x, y; // DECLARAR POSICIONES X Y<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; do {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; x = (int) (Math.random() * 5); // ASIGNAR UN NUMERO ALEATORIO ENTERO 0-5
+            AL RENGLON<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; y = (int) (Math.random() * 5); // ASIGNAR UN NUMERO ALEATORIO ENTERO 0-5 A
+            LA COLUMNA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; } while (!&quot;#&quot;.equals(gato[x][y])); // REPETIR EL CICLO MIENTRAS LA CASILLA
+            ESTE OCUPADA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; gato[x][y] = &quot;O&quot;; // ASIGNAR O A LA CASILLA<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;PC&quot;); // IMPRIMIR QUE ES TURNO DE LA PC<br />
+            &nbsp; &nbsp; }</p>
+        
+        <p>}<br />
+            &nbsp;</p>
+
+    </div>
+    <h3>Resultados:</h3>
+    <img src="./img1" alt="" srcset="">
+    <img src="./img2" alt="" srcset="">
+    <img src="./img3" alt="" srcset="">
+    <img src="./img4" alt="" srcset="">
+    <img src="./img5" alt="" srcset="">
 </body>
 </html>
