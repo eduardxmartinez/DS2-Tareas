@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tarea - Crear 20 superheroes</h1>
+    <h3>Código de la clase:</h3>
+    <div>
+        <p>package ds2.tarea12;</p>
+        
+        <p>import java.util.Arrays;</p>
+        
+        <p>public class SH {</p>
+        
+        <p>&nbsp; &nbsp; // Variables de instancia<br />
+            &nbsp; &nbsp; String nombre;<br />
+            &nbsp; &nbsp; String raza;<br />
+            &nbsp; &nbsp; boolean capa;<br />
+            &nbsp; &nbsp; String[] superP;<br />
+            &nbsp;<br />
+            &nbsp; &nbsp; // Declaraci&oacute;n del constructor de clase<br />
+            &nbsp; &nbsp; public SH(String nombre, String raza,boolean capa, String[] superP)<br />
+            &nbsp; &nbsp; {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.nombre = nombre;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.raza = raza;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.capa = capa;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.superP = superP;<br />
+            &nbsp; &nbsp; }<br />
+            &nbsp;<br />
+            &nbsp; &nbsp; public String getNombre() {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; return nombre;<br />
+            &nbsp; &nbsp; }<br />
+            &nbsp;<br />
+            &nbsp; &nbsp; public String getRaza() {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; return raza;<br />
+            &nbsp; &nbsp; }<br />
+            &nbsp;<br />
+            &nbsp; &nbsp; public boolean getCapa() {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; return capa ;<br />
+            &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; public String getSuperP(){<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String SP = Arrays.toString(superP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; return SP;<br />
+            &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; public void setNombre(String z) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.nombre = z;<br />
+            &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; public void setRaza(String z) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.raza = z;<br />
+            &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp;public void setCapa(boolean capa) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.capa = capa;<br />
+            &nbsp; &nbsp; }<br />
+            }<br />
+            &nbsp;</p>
+
+    </div>
+    <h3>Creando 20 superheroes:</h3>
+    <div>
+        <p>package ds2.tarea12;</p>
+        
+        <p>import java.util.Arrays;</p>
+        
+        <p>public class DS2Tarea12 {</p>
+        
+        <p>&nbsp; &nbsp; /**<br />
+            &nbsp; &nbsp; &nbsp;* @param args the command line arguments<br />
+            &nbsp; &nbsp; &nbsp;*/<br />
+            &nbsp; &nbsp; public static void main(String[] args) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] supermanSP = {&quot;volar&quot;,&quot;ojos laser&quot;,&quot;super
+            fuerza&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH superman = new SH(&quot;superman&quot;,&quot;alien&quot;,true,supermanSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] spidermanSP = {&quot;super fuerza&quot;,&quot;sentido aracnido&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH spiderman = new
+            SH(&quot;Spider-Man&quot;,&quot;humano&quot;,false,spidermanSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] batmanSP = {&quot;ninguno&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH batman = new SH(&quot;Batman&quot;,&quot;humano&quot;,true,batmanSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] robinSP = {&quot;ninguno&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH robin = new SH(&quot;Robin&quot;,&quot;humano&quot;,true,robinSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] thorSP = {&quot;Inmortal&quot;,&quot;Super fuerza&quot;,&quot;Lanzar
+            rayos&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH thor = new SH(&quot;Thor&quot;,&quot;Dios&quot;,true,thorSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] ironmanSP = {&quot;ninguno&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH ironman = new SH(&quot;Iron Man&quot;,&quot;humano&quot;,false,ironmanSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] CASP = {&quot;Super fuerza&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH capitanAmerica = new SH(&quot;Capitan
+            America&quot;,&quot;humano&quot;,false,CASP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] hulkSP = {&quot;Super Fuerza&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH hulk = new SH(&quot;Hulk&quot;,&quot;humano&quot;,false,hulkSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] CCSP = {&quot;niguno&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH chapulinColorado = new SH(&quot;Chapulin
+            Colorado&quot;,&quot;humano&quot;,true,CCSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] antManSP = {&quot;Cambiar de tama&ntilde;o&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH antMan = new SH(&quot;Ant Man&quot;,&quot;humano&quot;,false,antManSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] flashSP = {&quot;Super velocidad&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH flash = new SH(&quot;Flash&quot;,&quot;humano&quot;,false,flashSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] aquamSP = {&quot;Respirar bajo el agua&quot;,&quot;controlar animales
+            marinos&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH AquaMan = new SH(&quot;Aqua Man&quot;,&quot;sireno&quot;,false,aquamSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] chicoBSP = {&quot;Convertirse en cualquier animal&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH chicoBestia = new SH(&quot;Chico
+            Bestia&quot;,&quot;alien&quot;,false,chicoBSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] DRSP = {&quot;Brujeria&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH drStrange = new SH(&quot;Doctor Strange&quot;,&quot;Humano&quot;,true,DRSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] falconSP = {&quot;niguno&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH falcon = new SH(&quot;Falcon&quot;,&quot;humano&quot;,false,falconSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] capitanaMSP = {&quot;Volar&quot;,&quot;super fuerza&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH capitanaM = new SH(&quot;Capitana
+            Marvel&quot;,&quot;alien&quot;,true,capitanaMSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] antorchaHSP = {&quot;Volar&quot;,&quot;lanzar fuego&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH antorchaH = new SH(&quot;Antorcha
+            Humana&quot;,&quot;humano&quot;,false,antorchaHSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] moleSP = {&quot;Ser de piedra&quot;,&quot;Super fuerza&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH mole = new SH(&quot;Mole&quot;,&quot;humano&quot;,false,moleSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] mujerISP = {&quot;Hacerse invisible&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH mujerI = new SH(&quot;Mujer invisible&quot;,&quot;humano&quot;,false,mujerISP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String[] srFSP = {&quot;Ser elastico&quot;};<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; SH srF = new SH(&quot;Se&ntilde;or
+            Fantastico&quot;,&quot;humano&quot;,false,srFSP);<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp;&nbsp;<br />
+            }<br />
+            &nbsp;</p>
+
+    </div>
+</body>
+</html>
