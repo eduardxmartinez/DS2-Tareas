@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 14</title>
+</head>
+<body>
+    <h1>Tarea 14 - Crear 50 objetos con herencia</h1>
+    <h3>Código:</h3>
+    <div>
+        <p>package ds2.tarea14;</p>
+        
+        <p>/**<br />
+            &nbsp;*<br />
+            &nbsp;* @author eduardxmartinez<br />
+            &nbsp;*/<br />
+            import java.util.*;</p>
+        
+        <p>public class ejecutaAlumno {</p>
+        
+        <p>&nbsp; &nbsp; public static void main(String args[]) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; Scanner sc = new Scanner(System.in); // Variable scanner<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String nombre; // Variable para guardar nombre<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; String apellido; // Variable para guardar apellido<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; int edad; // Variable para guardar edad<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; Alumno[] alumno = new Alumno[50]; // Creamos array de 50 objetos alumno<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; alumno.length; i++) { // Ciclo para a&ntilde;adir
+            informaci&oacute;n a cada alumno<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;nombre = sc.next(); // Ingresamos nombre<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; apellido = sc.next(); // Ingresamos apellido<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; edad = sc.nextInt(); // Ingresamos edad<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; alumno[i] = new Alumno(nombre, apellido, edad); // Creamos objeto alumno[i]<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i&lt;=9) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;alumno[i].setExpediente(&quot;21920843&quot;+i); // Ejecutamos
+            m&eacute;todo setExpediente() &nbsp; &nbsp; &nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i&gt;=10) {<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;alumno[i].setExpediente(&quot;2192085&quot;+i); // Ejecutamos
+            m&eacute;todo setExpediente() &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; alumno.length ; i++) { // Ciclo para mostrar informaci&oacute;n
+            de cada alumno<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.print(&quot;Alumno &quot;+(i+1)+&quot;: &quot;+alumno[i].getNombre() +
+            &quot; &quot; + alumno[i].getApellido() + &quot; &quot; + alumno[i].getEdad() + &quot; &quot;); // Ejecutamos
+            m&eacute;todos getNombre(), getApellido() y getEdad()<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(alumno[i].getExpediente()); // Ejecutamos m&eacute;todo
+            getExpediente() para cada alumno&nbsp;<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; }</p>
+        
+        <p>&nbsp; &nbsp; }<br />
+            }<br />
+            &nbsp;</p>
+
+    </div>
+    <h3>Resultados:</h3>
+    <img src="./img1.png" alt="">
+    <img src="./img2.png" alt="">
+    <img src="./img3.png" alt="">
+    <img src="./img4.png" alt="">
+</body>
+</html>
